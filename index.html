@@ -205,5 +205,28 @@
 	window.addEventListener( 'click', click);
 	init();
 </script>
+<script type="text/javascript" src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="//cdn.bootcss.com/layer/3.0.1/layer.min.js"></script>
+<script type="text/javascript">
+	window.onload=function(){
+	 layer.confirm('本项目已停更，请前往新版视频解析站点观看。', {
+	  btn: ['去新站瞧瞧', '不想去'] //可以无限个按钮
+	  ,btn1: function(index, layero){
+
+	  }
+	}, function(index, layero){
+	  //按钮【按钮一】的回调
+	 window.open("http://vip.52saf.com","_self" )
+	}, function(index){
+	  //按钮【按钮二】的回调
+	});
+	  //loading层 加载效果
+	  var ii = layer.load();
+	  //此处用setTimeout演示ajax的回调
+	  setTimeout(function(){
+	    layer.close(ii);
+	  }, 1000);
+	}
+</script>
 </body>
 </html>
